@@ -1,23 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./normalize.css";
 import "./App.css";
+import { Route } from "react-router-dom";
+import Dashboard from "./views/Dashboard";
 
 const App = () => {
-  const [msg, setMsg] = useState();
-  useEffect(() => {
-    //ajustar proxy con el link correctamente para hacer conexion con el backend
-    //agregado de branch front-dev a repo
-    fetch("/api")
-      .then((res) => res.json())
-      .then((js) => setMsg(js));
-  }, []);
-  return (
-    <>
-      <h2>
-        Mensaje del backend: <code>{JSON.stringify(msg)}</code>
-      </h2>
-    </>
-  );
+  return <Route index element={<Dashboard />} />;
 };
 
 export default App;
