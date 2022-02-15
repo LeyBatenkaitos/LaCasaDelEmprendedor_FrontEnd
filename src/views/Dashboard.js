@@ -7,9 +7,7 @@ const Dashboard = () => {
   useEffect(() => {
     //ajustar proxy con el link correctamente para hacer conexion con el backend
     //agregado de branch front-dev a repo
-    fetch("/api/jsonTest")
-      .then((res) => res.json())
-      .then((js) => setMsg(js));
+    fetch("/api/jsonTest").then((res) => setMsg(res));
   }, []);
   return (
     <>
